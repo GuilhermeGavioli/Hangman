@@ -1,0 +1,16 @@
+.category-btn{
+    
+    border: 2px solid white;
+    font-weight: bold;
+    color: white;
+    padding: 2px 4px 2px 4px;
+    font-size: small;
+    margin: 4px;
+    transition: 0.3s;
+}
+
+.category-btn:hover{
+    background-color: white;
+    color: #1d1d1d;
+}
+/* border-2 border-white font-bold text-white px-2 text-sm */

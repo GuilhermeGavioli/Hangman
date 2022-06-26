@@ -1,6 +1,8 @@
 import express from 'express'
 const app = express();
 import path from 'path'
+import dotenv from 'dotenv'
+dotenv.config()
 
 import words from './words.json'
 
@@ -14,6 +16,8 @@ const convertedJson = JSON.parse(JSON.stringify(words))
 app.get("/allcategories", (req, res) => {
     res.json(Object.keys(convertedJson))
  })
+
+ console.log(process.env.BASE_PATH_URL)
 
 app.get("/words", async (req, res) => {
     const { category } = req.query

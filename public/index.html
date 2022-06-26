@@ -26,19 +26,16 @@
 
 
     <script defer>
+        
+
         // Array.from(document.getElementById("main").children).map(childButton => {
-            // window.process = {
-            //     env: {
-            //         BASE_PATH_URL: "http://localhost:3001"
-            //     }
-            // }
-         
-            //     childButton.addEventListener("click", (e) => {
-                //         window.location.href = `/index.html?category=${e.target.getAttribute("value")}`
-                //     })
-                // })
+        //         childButton.addEventListener("click", (e) => {
+        //                 window.location.href = `/game.html?category=${e.target.getAttribute("value")}`
+        //             })
+        //         })
+                
                 window.onload = async () => {
-            const res = await fetch(`https://hangman-eosin.vercel.app/allcategories`)
+            const res = await fetch(`http://localhost:3001/allcategories`)
             const data = await res.json();
             console.log(data)
             data.map(theme => {
@@ -46,7 +43,7 @@
                 newButton.className = "category-btn"
                 newButton.setAttribute("value", theme)
                 newButton.innerText = theme
-                newButton.addEventListener("click", e => window.location.href = `/index.html?category=${theme}`)
+                newButton.addEventListener("click", e => window.location.href = `/game.html?category=${theme}`)
                 document.getElementById("main").append(newButton)
 
             })

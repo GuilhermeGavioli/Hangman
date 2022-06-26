@@ -15,6 +15,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
 const path_1 = __importDefault(require("path"));
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 const words_json_1 = __importDefault(require("./words.json"));
 app.use(express_1.default.json());
 app.use(express_1.default.static(path_1.default.join(__dirname + '/public')));
@@ -22,6 +24,7 @@ const convertedJson = JSON.parse(JSON.stringify(words_json_1.default));
 app.get("/allcategories", (req, res) => {
     res.json(Object.keys(convertedJson));
 });
+console.log(process.env.BASE_PATH_URL);
 app.get("/words", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { category } = req.query;
     switch (category === null || category === void 0 ? void 0 : category.toString().toUpperCase()) {

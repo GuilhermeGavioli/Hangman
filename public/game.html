@@ -141,12 +141,13 @@
 
             async function fetchData(){
                 // const res = await fetch(`http://localhost:3001/words?category=${category}`)
-                const res = await fetch("https://hangman-eosin.vercel.app" + `?category=${category}`)
+                const res = await fetch("http://localhost:3001/words" + `?category=${category}`)
                 const data = await res.json()
+
                 words = data
 
                 shuffleArray(words)
-                console.log(words)
+             
             function shuffleArray(array) {
                 for (let i = array.length - 1; i > 0; i--) {
                     const j = Math.floor(Math.random() * (i + 1));
@@ -162,7 +163,7 @@
 
        
 
-            document.getElementById("return-btn").addEventListener("click", ()=> window.location.href = "/main.html")
+            document.getElementById("return-btn").addEventListener("click", ()=> window.location.href = "/index.html")
             window.addEventListener("keydown", (e)=> {
                 if (e.altKey || e.ctrlKey || e.shiftKey) return
                 regraDeNegocio(e, "keyEvent")
@@ -306,7 +307,6 @@
             const lettersContainer = document.getElementById("letters-container")
             Array.from(word).map(letter => {
                 let newDiv = document.createElement("div");
-                console.log(letter)
                 if(letter == "-"){
                     newDiv.innerText = "-"
                 }

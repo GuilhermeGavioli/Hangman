@@ -1,6 +1,7 @@
 import express from 'express'
 const app = express();
 import path from 'path'
+
 import dotenv from 'dotenv'
 dotenv.config()
 
@@ -38,5 +39,8 @@ app.get("/words", async (req, res) => {
 
 })
 
+app.get('/test', (req, res) => { 
+    res.send('ok')
+})
 
-app.listen(3001, () => console.log("Server is on..."))
+app.listen(process.env.PORT, () => console.log("Server is on..."))

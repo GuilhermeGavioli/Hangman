@@ -141,7 +141,7 @@
 
             async function fetchData(){
                 // const res = await fetch(`http://localhost:3001/words?category=${category}`)
-                const res = await fetch("http://localhost:3001/words" + `?category=${category}`)
+                const res = await fetch(`${window.location.origin}/words` + `?category=${category}`)
                 const data = await res.json()
 
                 words = data

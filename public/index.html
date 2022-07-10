@@ -27,6 +27,7 @@
 
     <script defer>
         
+            console.log(window.location.href)
 
         // Array.from(document.getElementById("main").children).map(childButton => {
         //         childButton.addEventListener("click", (e) => {
@@ -35,7 +36,7 @@
         //         })
                 
                 window.onload = async () => {
-            const res = await fetch(`http://localhost:3001/allcategories`)
+            const res = await fetch(`${window.location.origin}/allcategories`)
             const data = await res.json();
             console.log(data)
             data.map(theme => {

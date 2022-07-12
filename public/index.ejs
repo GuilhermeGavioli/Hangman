@@ -44,7 +44,7 @@
                 newButton.className = "category-btn"
                 newButton.setAttribute("value", theme)
                 newButton.innerText = theme
-                newButton.addEventListener("click", e => window.location.href = `/game.html?category=${theme}`)
+                newButton.addEventListener("click", e => window.location.href = `/game?category=${theme}`)
                 document.getElementById("main").append(newButton)
 
             })

@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "engines": { "node" : "16.13.1" },
+  "engines": {
+    "node": "16.13.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "postbuild": "copyfiles ./public/*.html ./public/*.css ./public/tailwind.config.js  ./public/assets/*.ico ./public/assets/*.png ./dist/",
+    "postbuild": "copyfiles ./public/*.ejs ./public/*.css ./public/tailwind.config.js  ./public/assets/*.ico ./public/assets/*.png ./dist/",
     "start": "node ./dist/index.js",
     "dev": "ts-node-dev app.ts"
   },
@@ -15,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
     "express": "^4.18.1",
     "lodash": "^4.17.21",
     "node-modules": "^1.0.1"
@@ -26,6 +29,7 @@
     "autoprefixer": "^10.4.7",
     "buffer": "^6.0.3",
     "copy-webpack-plugin": "^11.0.0",
+    "copyfiles": "^2.4.1",
     "dotenv-webpack": "^7.1.0",
     "nodemon": "^2.0.18",
     "potscss": "^0.0.1",

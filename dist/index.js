@@ -13,12 +13,19 @@ const dotenv_1 = __importDefault(require("dotenv"));
 const words_1 = __importDefault(require("./words"));
 const app = (0, express_1.default)();
 dotenv_1.default.config();
-console.log(words_1.default);
+// import 'ejs'
+app.set('view engine', 'ejs');
 app.use(express_1.default.json());
 app.use(express_1.default.static(path_1.default.join(__dirname + '/public')));
 const convertedJson = JSON.parse(JSON.stringify(words_1.default));
 app.get("/allcategories", (req, res) => {
     res.json(Object.keys(words_1.default));
+});
+app.get('/index', (req, res) => {
+    res.render(path_1.default.resolve(__dirname, 'public', 'index.ejs'));
+});
+app.get('/game', (req, res) => {
+    res.render(path_1.default.resolve(__dirname, 'public', 'game.ejs'));
 });
 // console.log(convertedJson)
 app.get("/words", async (req, res) => {

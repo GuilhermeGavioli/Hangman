@@ -13,7 +13,9 @@ const app = express();
 dotenv.config()
 
 
-console.log(words)
+// import 'ejs'
+
+app.set('view engine', 'ejs')
 
 app.use(express.json())
 
@@ -24,6 +26,13 @@ const convertedJson = JSON.parse(JSON.stringify(words))
 app.get("/allcategories", (req, res) => {
     res.json(Object.keys(words))
  })
+
+app.get('/index', (req, res) => { 
+    res.render(path.resolve(__dirname, 'public', 'index.ejs'))
+})
+app.get('/game', (req, res) => { 
+    res.render(path.resolve(__dirname, 'public', 'game.ejs'))
+})
 
 // console.log(convertedJson)
 

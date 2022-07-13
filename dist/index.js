@@ -22,10 +22,10 @@ app.get("/allcategories", (req, res) => {
     res.json(Object.keys(words_1.default));
 });
 app.get('/index', (req, res) => {
-    res.render(path_1.default.resolve(__dirname, 'public', 'index.ejs'));
+    res.render(path_1.default.resolve(__dirname, '../', 'public', 'index.ejs'));
 });
 app.get('/game', (req, res) => {
-    res.render(path_1.default.resolve(__dirname, 'public', 'game.ejs'));
+    res.render(path_1.default.resolve(__dirname, '../', 'public', 'game.ejs'));
 });
 // console.log(convertedJson)
 app.get("/words", async (req, res) => {
@@ -47,4 +47,4 @@ app.get("/words", async (req, res) => {
 app.get('/test', (req, res) => {
     res.send('ok');
 });
-app.listen(process.env.PORT || 33333, () => console.log("Server is on..."));
+app.listen(process.env.PORT || 3333, () => console.log("Server is on..."));

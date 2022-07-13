@@ -28,10 +28,10 @@ app.get("/allcategories", (req, res) => {
  })
 
 app.get('/index', (req, res) => { 
-    res.render(path.resolve(__dirname, 'public', 'index.ejs'))
+    res.render(path.resolve(__dirname, '../','public', 'index.ejs'))
 })
 app.get('/game', (req, res) => { 
-    res.render(path.resolve(__dirname, 'public', 'game.ejs'))
+    res.render(path.resolve(__dirname, '../', 'public', 'game.ejs'))
 })
 
 // console.log(convertedJson)
@@ -59,4 +59,4 @@ app.get('/test', (req, res) => {
     res.send('ok')
 })
 
-app.listen(process.env.PORT || 33333, () => console.log("Server is on..."))
+app.listen(process.env.PORT || 3333, () => console.log("Server is on..."))

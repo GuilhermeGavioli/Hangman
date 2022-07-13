@@ -9,9 +9,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "postbuild": "copyfiles ./public/*.ejs ./public/*.css ./public/tailwind.config.js  ./public/assets/*.ico ./public/assets/*.png ./dist/",
+    "postbuild": "copyfiles ./public/*.ejs ./public/*.css ./public/*.js ./public/tailwind.config.js  ./public/assets/*.ico ./public/assets/*.png ./dist/",
     "start": "node ./dist/index.js",
-    "dev": "ts-node-dev app.ts"
+    "dev": "ts-node-dev ./src/index.ts"
   },
   "author": "",
   "license": "ISC",
